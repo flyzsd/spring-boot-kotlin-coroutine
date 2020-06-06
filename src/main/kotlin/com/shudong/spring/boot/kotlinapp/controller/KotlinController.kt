@@ -1,5 +1,6 @@
 package com.shudong.spring.boot.kotlinapp.controller
 
+import com.shudong.spring.boot.kotlinapp.repository.Student
 import com.shudong.spring.boot.kotlinapp.service.KotlinService
 import kotlinx.coroutines.*
 import org.slf4j.Logger
@@ -9,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 private val logger: Logger = LoggerFactory.getLogger(KotlinController::class.java)
-
-data class Student(val name: String)
 
 @RestController
 @RequestMapping("/api")
