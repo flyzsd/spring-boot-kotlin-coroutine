@@ -1,8 +1,7 @@
 package com.shudong.spring.boot.kotlinapp.controller
 
 import com.shudong.spring.boot.kotlinapp.service.KotlinService
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.GetMapping
@@ -28,5 +27,12 @@ class KotlinController(
         }
         println("student -> $student")
         return student
+    }
+
+    @GetMapping("/student2")
+    fun fetchStudentAsync(): Deferred<Student> = GlobalScope.async {
+        logger.debug("+inside coroutine")
+        delay(1_000)
+        kotlinService.fetchStudent()
     }
 }
