@@ -18,6 +18,6 @@ data class Student(
 interface StudentRepository : CrudRepository<Student, String> {
     fun findByName(name: String): List<Student>
 
-    @Query("SELECT * from student where name = :name")
+    @Query("SELECT * from student WHERE name = :name")
     fun findStudentByName(@Param("name") name: String): Student?
 }
