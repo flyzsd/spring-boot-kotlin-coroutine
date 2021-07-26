@@ -8,6 +8,8 @@ import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
 import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories
 import org.springframework.data.repository.findByIdOrNull
+import reactor.blockhound.BlockHound
+import reactor.tools.agent.ReactorDebugAgent
 import java.time.Instant
 import java.util.*
 
@@ -27,5 +29,7 @@ class KotlinAppApplication {
 }
 
 fun main(args: Array<String>) {
+//	BlockHound.install()
+	ReactorDebugAgent.init()
 	runApplication<KotlinAppApplication>(*args)
 }
