@@ -74,6 +74,17 @@
 			<artifactId>blockhound</artifactId>
 			<version>1.0.6.RELEASE</version>
 		</dependency>
+		<!--
+			Temporary fix for issue on Apple M1
+			https://github.com/netty/netty/issues/11020
+			Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider
+		-->
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-resolver-dns-native-macos</artifactId>
+			<version>4.1.74.Final</version>
+			<classifier>osx-aarch_64</classifier>
+		</dependency>
 
 		<dependency>
 			<groupId>com.h2database</groupId>
