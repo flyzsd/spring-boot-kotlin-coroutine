@@ -2,8 +2,9 @@
 
 
 ## Docker setup
-docker run --name mariadb -e MARIADB_ROOT_PASSWORD=p@ssw0rd -d -p 3306:3306 mariadb:10.7.3
-docker stop mariadb
-docker start mariadb
+$docker pull mysql
+$docker run --name docker-mysql -e MYSQL_ROOT_PASSWORD=password -d -p 3306:3306 mysql
+$docker stop docker-mysql
+$docker start docker-mysql
 
 CREATE DATABASE IF NOT EXISTS test_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
